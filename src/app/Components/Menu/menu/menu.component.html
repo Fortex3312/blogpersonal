@@ -1,0 +1,64 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+
+
+
+
+
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Fundamentos
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <a mat-list-item href="/escenicos">Escenicos</a>
+          <a mat-list-item href="/iluminacion">Iluminacion</a>
+          <a mat-list-item href="/vestuario">Vestuario</a>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+             Bitacora
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <a mat-list-item href="/escenicos">
+            <mat-icon class="icons" color="warn" aria-hidden="false" aria-label="Example home icon" fontIcon="theater_comedy">theater_comedy</mat-icon>
+            Escenicos
+          </a>
+          <a mat-list-item href="/iluminacion">
+            <mat-icon class="icons" style="color:#fffb16" aria-hidden="false" aria-label="Example home icon" fontIcon="wb_incandescent">wb_incandescent</mat-icon>
+
+            Iluminacion</a>
+          <a mat-list-item href="/vestuario">Vestuario</a>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+
+
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Blog</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
